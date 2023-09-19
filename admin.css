@@ -18,6 +18,14 @@
 
     /* Admin Bar */
     --bar-height: 50px;
+    --menu-width: 200px;
+}
+
+@font-face {
+    font-family: "Inter";
+    src:
+        local("Inter"),
+        url("Inter-Regular.ttf") format("truetype");
 }
 
 /* 
@@ -30,6 +38,7 @@ Body
 
 body {
     background: var(--color-white);
+    font-family: Inter, sans-serif !important;
 }
 
 /* 
@@ -95,6 +104,40 @@ Admin Bar
     background: var(--color-main);
 }
 
+#wpadminbar .ab-submenu {
+    padding: 0;
+}
+
+#wpadminbar .ab-submenu li {
+    height: auto !important;
+    background: var(--color-black);
+}
+
+#wpadminbar .ab-submenu li:hover {
+    background: var(--color-main);
+    color: white;
+
+}
+
+#wpadminbar .ab-submenu li a {
+    height: auto !important;
+    padding: var(--padding);
+    color: currentColor !important;
+}
+
+#wpadminbar .quicklinks>ul>li>a {
+    padding-left: var(--padding);
+    padding-right: var(--padding);
+}
+
+#wpadminbar .ab-icon,
+#wpadminbar .ab-item:before,
+#wpadminbar>#wp-toolbar>#wp-admin-bar-root-default .ab-icon,
+.wp-admin-bar-arrow {
+    display: none;
+    margin: 0;
+}
+
 /* 
 ============================================================
 
@@ -105,8 +148,6 @@ Admin Menu
 
 /* Menu */
 
-
-
 #adminmenu {
     margin: 0;
 }
@@ -116,6 +157,7 @@ Admin Menu
 #adminmenuback,
 #adminmenuwrap {
     background: var(--color-black);
+    width: var(--menu-width);
 }
 
 /* Separator */
@@ -578,4 +620,49 @@ Theme Page
     border: 1px solid var(--shade-black-fuller);
     box-shadow: none;
     border-radius: var(--border-radius-small);
+}
+
+/* 
+============================================================
+
+Drag Area
+
+============================================================ 
+*/
+
+.drag-drop #drag-drop-area {
+    border-radius: var(--border-radius);
+    border: 1px dashed var(--shade-black-fuller);
+    height: auto;
+}
+
+.drag-drop .drag-drop-inside {
+    margin: var(--padding-50) auto;
+}
+
+/* 
+============================================================
+
+Media Library
+
+============================================================ 
+*/
+
+table.media .column-title .media-icon img {
+    border-radius: var(--border-radius-small);
+}
+
+.wp-core-ui .attachment-preview,
+.wp-core-ui .attachment,
+.wp-core-ui .attachment .thumbnail,
+.wp-core-ui .attachment .thumbnail img,
+.wp-core-ui .attachment .thumbnail:after,
+.wp-core-ui .attachment-preview:before {
+    border-radius: var(--border-radius) !important;
+    box-shadow: none;
+    outline: none;
+}
+
+.wp-core-ui .attachment-preview {
+    border: 1px solid var(--shade-black);
 }
