@@ -150,11 +150,11 @@ add_action('customize_register', 'theme_colors_customizer');
 function theme_colors_css()
 {
 
-    $colorMain = get_theme_mod('theme_main_color');
-    $colorBlack = get_theme_mod('theme_black_color');
-    $colorWhite = get_theme_mod('theme_white_color');
-    $colorNotification = get_theme_mod('theme_notification_color');
-    $colorButtonHover = get_theme_mod('theme_button_hover_color');
+    $colorMain = get_theme_mod('theme_main_color', '#0000ff');
+    $colorBlack = get_theme_mod('theme_black_color', '#262626');
+    $colorWhite = get_theme_mod('theme_white_color', '#ffffff');
+    $colorNotification = get_theme_mod('theme_notification_color', '#ff4d00');
+    $colorButtonHover = get_theme_mod('theme_button_hover_color', '#5959ff');
 
     ?>
     <style id="custom-colors">

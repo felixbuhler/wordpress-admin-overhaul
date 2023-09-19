@@ -149,6 +149,15 @@ Admin Bar
     margin: 0;
 }
 
+#adminmenu .wp-has-current-submenu.opensub .wp-submenu li.current a:focus,
+#adminmenu .wp-has-current-submenu.opensub .wp-submenu li.current a:hover,
+#adminmenu .wp-submenu li.current a:focus,
+#adminmenu .wp-submenu li.current a:hover,
+#adminmenu a.wp-has-current-submenu:focus+.wp-submenu li.current a:focus,
+#adminmenu a.wp-has-current-submenu:focus+.wp-submenu li.current a:hover {
+    color: white !important;
+}
+
 /* 
 ============================================================
 
@@ -401,6 +410,28 @@ textarea:focus,
 .submitbox .submitdelete,
 a#remove-post-thumbnail {
     color: red;
+}
+
+/* WooCommerce */
+
+.woocommerce-BlankState a.button-primary:active,
+.woocommerce-BlankState a.button-primary:focus,
+.woocommerce-BlankState a.button-primary:hover,
+.woocommerce-BlankState button.button-primary:active,
+.woocommerce-BlankState button.button-primary:focus,
+.woocommerce-BlankState button.button-primary:hover,
+.woocommerce-message a.button-primary:active,
+.woocommerce-message a.button-primary:focus,
+.woocommerce-message a.button-primary:hover,
+.woocommerce-message button.button-primary:active,
+.woocommerce-message button.button-primary:focus,
+.woocommerce-message button.button-primary:hover,
+.woocommerce-BlankState a.button-primary,
+.woocommerce-BlankState button.button-primary,
+.woocommerce-message a.button-primary,
+.woocommerce-message button.button-primary {
+    box-shadow: none !important;
+    border: none !important;
 }
 
 /* 
@@ -979,4 +1010,39 @@ body.login div#login form#loginform p.submit input#wp-submit:hover {
 .login .message {
     background: var(--color-light-green) !important;
     border-color: var(--color-green) !important;
+}
+
+/* 
+============================================================
+
+WooCommerce
+
+============================================================ 
+*/
+
+.woocommerce-page #wpcontent {
+    min-height: calc(100vh - var(--bar-height));
+    margin-left: var(--menu-width);
+}
+
+.woocommerce-embed-page #wpbody-content {
+    padding-right: 0 !important;
+}
+
+.woocommerce-layout__header {
+    top: var(--bar-height) !important;
+    width: calc(100% - var(--menu-width)) !important;
+}
+
+.woocommerce-layout__header-wrapper h1 {
+    padding-left: calc(2 * var(--padding)) !important;
+}
+
+.order-status,
+.order-return-status.status-not-shipped,
+.order-shipping-status.status-not-shipped,
+.shipment-status.status-not-shipped {
+    box-shadow: none !important;
+    border-radius: 100px !important;
+    border: none !important
 }
