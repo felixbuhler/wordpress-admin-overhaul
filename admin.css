@@ -15,6 +15,7 @@
     --shade-white: rgba(255, 255, 255, 0.1);
     --color-green: #00ff00;
     --color-light-green: #b6ffb6;
+    --color-star: rgb(255, 213, 0);
 
     /* Admin Bar */
     --bar-height: 50px;
@@ -27,6 +28,16 @@
         local("Inter"),
         url("Inter-Regular.ttf") format("truetype");
 }
+
+@font-face {
+    font-family: "Inter";
+    src:
+        local("Inter"),
+        url("Inter-Medium.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
 
 /* 
 ============================================================
@@ -232,6 +243,15 @@ Admin Menu
 #adminmenu a:hover,
 .folded #adminmenu .wp-submenu-head:hover {
     box-shadow: none;
+}
+
+#adminmenu .wp-submenu {
+    left: var(--menu-width);
+}
+
+#adminmenu .wp-not-current-submenu .wp-submenu,
+.folded #adminmenu .wp-has-current-submenu .wp-submenu {
+    border-left: 0;
 }
 
 /* Collapse Button */
@@ -622,6 +642,105 @@ Theme Page
     border-radius: var(--border-radius-small);
 }
 
+.theme-browser.content-filterable .theme {
+    border-radius: var(--border-radius-small);
+}
+
+.theme-browser.content-filterable .theme .theme-screenshot {
+    border: 1px solid var(--shade-black);
+    border-top-left-radius: var(--border-radius-small);
+    border-top-right-radius: var(--border-radius-small);
+}
+
+.theme-browser.content-filterable .theme .theme-id-container {
+    padding: var(--padding);
+    height: auto;
+    background: var(--shade-black);
+    box-shadow: none;
+}
+
+.theme-browser.content-filterable .theme .theme-name {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+.filter-count .count.theme-count {
+    background: var(--shade-black);
+    color: var(--color-black);
+}
+
+.filter-links li>a:focus,
+.filter-links li>a:hover,
+.show-filters .filter-links a.current:focus,
+.show-filters .filter-links a.current:hover {
+    color: var(--color-main);
+}
+
+.filter-links .current {
+    border-bottom-color: var(--color-main);
+    color: var(--color-main);
+    font-weight: bold;
+}
+
+.wp-filter .button.drawer-toggle {
+    border-radius: var(--border-radius) !important;
+}
+
+.wp-filter .button.drawer-toggle:focus,
+.wp-filter .button.drawer-toggle:hover,
+.wp-filter .drawer-toggle:focus:before,
+.wp-filter .drawer-toggle:hover:before {
+    color: var(--color-main);
+}
+
+.show-filters .wp-filter .drawer-toggle:focus,
+.show-filters .wp-filter .drawer-toggle:hover {
+    background: var(--color-main);
+    color: white;
+}
+
+.show-filters .wp-filter .drawer-toggle:focus:before,
+.show-filters .wp-filter .drawer-toggle:hover:before {
+    color: white;
+}
+
+/* 
+============================================================
+
+Plugins
+
+============================================================ 
+*/
+
+.plugin-card {
+    border-radius: var(--border-radius);
+    border: 1px solid var(--shade-black);
+    box-sizing: border-box;
+}
+
+.plugin-card-bottom {
+    clear: both;
+    padding: var(--padding);
+    background-color: var(--shade-black);
+    border: none;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+
+
+.star-rating .star {
+    color: var(--color-star);
+}
+
+
+
+.plugin-details-modal #TB_closeWindowButton,
+.plugin-details-modal #TB_closeWindowButton {
+    border-radius: 50px !important;
+}
+
 /* 
 ============================================================
 
@@ -665,4 +784,150 @@ table.media .column-title .media-icon img {
 
 .wp-core-ui .attachment-preview {
     border: 1px solid var(--shade-black);
+}
+
+/* 
+============================================================
+
+Theme Editor
+
+============================================================ 
+*/
+
+#templateside>ul {
+    padding: var(--padding);
+}
+
+.notice,
+div.error,
+div.updated {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: var(--border-radius);
+    box-shadow: none;
+    margin: 5px 15px 2px;
+    padding: 1px 12px;
+}
+
+#templateside li:not(.howto)>a,
+[role=treeitem] .folder-label,
+[role=treeitem] {
+    border-radius: var(--border-radius);
+}
+
+/* 
+============================================================
+
+Customizer
+
+============================================================ 
+*/
+
+#customize-header-actions #publish-settings,
+#customize-header-actions input.save {
+    background: var(--color-main) !important;
+    padding-left: var(--padding) !important;
+    padding-right: var(--padding) !important;
+    transition: none !important;
+}
+
+#customize-header-actions #publish-settings:hover,
+#customize-header-actions input.save:hover {
+    background: var(--color-button-hover) !important;
+}
+
+#customize-header-actions #publish-settings {
+    border-top-right-radius: var(--border-radius) !important;
+    border-bottom-right-radius: var(--border-radius) !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+#customize-header-actions input.save {
+    border-top-left-radius: var(--border-radius) !important;
+    border-bottom-left-radius: var(--border-radius) !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+#customize-header-actions input:disabled {
+    background: var(--shade-black) !important;
+    border-radius: var(--border-radius) !important;
+}
+
+#customize-header-actions input:disabled:hover {
+    background: var(--shade-black) !important;
+}
+
+.customize-control .attachment-media-view .button-add-media,
+.customize-control .attachment-media-view .placeholder,
+.customize-control-header .placeholder {
+    border-radius: var(--border-radius);
+}
+
+#customize-controls #customize-notifications-area:not(.has-overlay-notifications),
+#customize-controls .customize-section-title>.customize-control-notifications-container:not(.has-overlay-notifications),
+#customize-controls .panel-meta>.customize-control-notifications-container:not(.has-overlay-notifications) {
+    padding: var(--padding);
+    box-sizing: border-box;
+}
+
+#customize-controls .control-section .accordion-section-title {
+    border: none !important;
+}
+
+#customize-controls .control-section .accordion-section-title:focus,
+#customize-controls .control-section .accordion-section-title:hover,
+#customize-controls .control-section.open .accordion-section-title,
+#customize-controls .control-section:hover>.accordion-section-title {
+
+    background: var(--color-main);
+    color: white;
+}
+
+.customize-panel-back,
+.customize-section-back {
+    border: none;
+}
+
+.customize-controls-close {
+    border-left: none;
+    border-right: none;
+    border-top-color: transparent !important;
+}
+
+.customize-panel-back:hover,
+.customize-section-back:hover,
+.customize-controls-close:hover {
+    background: var(--color-main);
+}
+
+.customize-panel-back:before,
+.customize-section-back:before,
+.customize-controls-close::before {
+    color: var(--color-main);
+}
+
+.customize-panel-back:hover:before,
+.customize-section-back:hover:before,
+.customize-controls-close:hover:before {
+    color: white;
+}
+
+.wp-color-result-text {
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    margin-right: 1px !important;
+}
+
+.iris-picker .iris-square,
+.iris-picker .iris-slider,
+.iris-picker .iris-square-inner,
+.iris-picker .iris-palette {
+    box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.2) !important;
+    border-radius: var(--border-radius) !important;
+}
+
+.wp-picker-container .iris-picker {
+    border-radius: var(--border-radius) !important;
 }

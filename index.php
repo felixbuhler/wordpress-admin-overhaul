@@ -15,12 +15,13 @@ function my_admin_theme_style()
 add_action('admin_enqueue_scripts', 'my_admin_theme_style');
 
 // Remove Icons
-function sertmedia_remove_dashicons_junk() {
-    if ( is_user_logged_in() ) {
-          wp_dequeue_style('dashicons');
+function sertmedia_remove_dashicons_junk()
+{
+    if (is_user_logged_in()) {
+        wp_dequeue_style('dashicons');
     }
 }
-add_action( 'wp_enqueue_scripts', 'sertmedia_remove_dashicons_junk' );
+add_action('wp_enqueue_scripts', 'sertmedia_remove_dashicons_junk');
 
 // Customizer Additions
 
@@ -62,7 +63,7 @@ function theme_colors_customizer($wp_customize)
     $wp_customize->add_setting(
         'theme_black_color',
         array(
-            'default' => '#141414',
+            'default' => '#262626',
         )
     );
 
@@ -83,7 +84,7 @@ function theme_colors_customizer($wp_customize)
     $wp_customize->add_setting(
         'theme_white_color',
         array(
-            'default' => '#ff00ff',
+            'default' => '#ffffff',
         )
     );
 
@@ -181,10 +182,49 @@ function theme_colors_css()
 
         }
     </style>
+    <script>
+        jQuery(document).ready(function ($) {
+            $.wp.wpColorPicker.prototype.options = {
+                hide: true,
+                palettes: ['#262626', '#0059ff', '#ff4d00', '#00ff00', '#FF61C8', '#fbdd74']
+            };
+        });
+    </script>
 
     <?php
 }
 
 add_action('admin_head', 'theme_colors_css');
+add_action('customize_controls_head', 'theme_colors_css');
+
+// Custom Admin Pallette
+
+add_action('admin_init', function () {
+
+    $colorMain = get_theme_mod('theme_main_color');
+    $colorBlack = get_theme_mod('theme_black_color');
+    $colorWhite = get_theme_mod('theme_white_color');
+    $colorNotification = get_theme_mod('theme_notification_color');
+    $colorButtonHover = get_theme_mod('theme_button_hover_color');
+
+    wp_admin_css_color(
+        '1995',
+        __('1995'),
+        admin_url("css/colors-classic.css"),
+        array(
+            $colorMain,
+            $colorButtonHover,
+            $colorNotification,
+            $colorBlack
+        )
+    );
+});
+
+function admin_color_scheme()
+{
+    global $_wp_admin_css_colors;
+    $_wp_admin_css_colors = 0;
+}
+add_action('admin_head', 'admin_color_scheme');
 
 ?>
