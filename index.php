@@ -196,6 +196,7 @@ function theme_colors_css()
 
 add_action('admin_head', 'theme_colors_css');
 add_action('customize_controls_head', 'theme_colors_css');
+add_action('login_head', 'theme_colors_css');
 
 // Custom Admin Pallette
 
@@ -226,5 +227,38 @@ function admin_color_scheme()
     $_wp_admin_css_colors = 0;
 }
 add_action('admin_head', 'admin_color_scheme');
+
+// Login 
+
+function login_stylesheet()
+{
+    wp_enqueue_style('custom-login', plugins_url('/admin.css', __FILE__));
+    wp_enqueue_script('custom-login', get_stylesheet_directory_uri() . '/style-login.js');
+}
+add_action('login_enqueue_scripts', 'login_stylesheet');
+
+add_theme_support('custom-logo');
+function theme_logo()
+{ ?>
+    <style type="text/css">
+        #login h1 a,
+        .login h1 a {
+            background-image: url(<?php echo esc_url(wp_get_attachment_url(get_theme_mod('custom_logo'))); ?>);
+        }
+    </style>
+<?php }
+add_action('login_enqueue_scripts', 'theme_logo');
+
+function login_logo_url()
+{
+    return home_url();
+}
+add_filter('login_headerurl', 'login_logo_url');
+
+function login_logo_url_title()
+{
+    return get_bloginfo('name');
+}
+add_filter('login_headertitle', 'login_logo_url_title');
 
 ?>

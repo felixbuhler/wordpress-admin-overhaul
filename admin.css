@@ -931,3 +931,52 @@ Customizer
 .wp-picker-container .iris-picker {
     border-radius: var(--border-radius) !important;
 }
+
+/* 
+============================================================
+
+Login
+
+============================================================ 
+*/
+
+
+body.login div#login h1 a {
+    height: 160px;
+    width: 320px;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding-bottom: 30px;
+}
+
+body.login div#login form#loginform,
+body.login div#login form#lostpasswordform {
+    border-radius: var(--border-radius) !important;
+}
+
+body.login div#login form#loginform p.submit input#wp-submit:hover {
+    background: var(--color-button-hover);
+}
+
+.login #backtoblog a:hover,
+.login #nav a:hover,
+.login h1 a:hover {
+    color: var(--color-main);
+}
+
+.login #login_error,
+.login .message,
+.login .success {
+    border-left: none;
+    padding: var(--padding);
+    background-color: white;
+    box-shadow: none;
+    border: 1px solid var(--shade-black);
+    border-radius: var(--border-radius);
+}
+
+.login .message {
+    background: var(--color-light-green) !important;
+    border-color: var(--color-green) !important;
+}
