@@ -1,4 +1,4 @@
-# 1995 • A Wordpress Admin Overhaul
+# 〔1995〕 A Wordpress Admin Overhaul
 
 An override for the Wordpress Admin with Customizer Support.
 

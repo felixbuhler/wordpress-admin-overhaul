@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: Admin 1995
-Plugin URI: https://www.digital.ink
-Description: Wordpress Admin Theme by Felix Buhler
+Plugin Name: 〔1995〕 A Wordpress Admin Overhaul
+Plugin URI: https://github.com/felixbuhler/wordpress-admin-overhaul
+Description: An easy to modify Wordpress Admin overhaul
 Author: Felix Buhler
 Version: 1.0
-Author URI: https://www.digital.ink
+Author URI: https://felix-buhler.de
 */
 
 function my_admin_theme_style()
