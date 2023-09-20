@@ -1181,3 +1181,17 @@ WooCommerce
     border-radius: 100px !important;
     border: none !important
 }
+
+/* 
+============================================================
+
+Footer
+
+============================================================ 
+*/
+
+#wpfooter {
+    margin-left: var(--menu-width);
+    position: relative;
+    padding: calc(0.5 * var(--padding-50));
+}

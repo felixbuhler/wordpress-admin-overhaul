@@ -1,4 +1,4 @@
-# Wordpress Admin Overhaul
+# 1995 • A Wordpress Admin Overhaul
 
 An override for the Wordpress Admin with Customizer Support.
 
@@ -16,6 +16,7 @@ In the customizer you can change the colors and also add a logo, that’s also u
 - Changes the typeface to Inter
 - Color coding for Plugin page
 - Makes profile pictures circles
+- Change the footer text
 ## Found a 🪲?
 
 You can write me on [Instagram](https://www.instagram.com/felixbuhler/). 

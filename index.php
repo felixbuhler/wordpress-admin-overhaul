@@ -32,8 +32,8 @@ function theme_colors_customizer($wp_customize)
     $wp_customize->add_section(
         'theme_color_section',
         array(
-            'title' => '1995 Theme Colors',
-            'description' => 'Set Theme Colors',
+            'title' => '1995 Settings',
+            'description' => 'Change Settings',
             'priority' => '40'
         )
     );
@@ -142,6 +142,27 @@ function theme_colors_customizer($wp_customize)
             )
         )
     );
+    // Footer Text
+	$wp_customize->add_setting( 'footer_text_block', array(
+        'default'           => __( 'Nice page!' ),
+        'sanitize_callback' => 'sanitize_text'
+   ) );
+   $wp_customize->add_control( new WP_Customize_Control(
+       $wp_customize,
+       'custom_footer_text',
+           array(
+               'label'    => 'Footer Text',
+               'section'  => 'theme_color_section',
+               'settings' => 'footer_text_block',
+               'type'     => 'text'
+           )
+       )
+   );
+
+    // Sanitize text
+   function sanitize_text( $text ) {
+       return sanitize_text_field( $text );
+   }
 }
 
 add_action('customize_register', 'theme_colors_customizer');
@@ -260,5 +281,18 @@ function login_logo_url_title()
     return get_bloginfo('name');
 }
 add_filter('login_headertitle', 'login_logo_url_title');
+
+// Footer Text
+
+add_filter(
+    'admin_footer_text',
+    function ( $footer_text ) {
+        $footerText = get_theme_mod('footer_text_block', 'Nice page!');
+        // Edit the line below to customize the footer text.
+        $footer_text = $footerText;
+         
+        return $footer_text;
+    }
+);
 
 ?>
