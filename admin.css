@@ -720,7 +720,6 @@ Theme Page
 */
 
 .theme-browser .theme {
-    border-radius: var(--border-radius);
     border: none;
     outline: none;
     overflow: hidden;
@@ -788,24 +787,42 @@ Theme Page
     border-radius: var(--border-radius-small);
 }
 
-.theme-browser.content-filterable .theme .theme-screenshot {
-    border: 1px solid var(--shade-black);
+.theme-browser.content-filterable .theme .theme-screenshot,
+.theme-browser .theme .theme-screenshot,
+.theme-browser .theme.focus .theme-screenshot,
+.theme-browser .theme:hover .theme-screenshot {
     border-top-left-radius: var(--border-radius-small);
     border-top-right-radius: var(--border-radius-small);
+    border: 1px solid var(--shade-black);
 }
 
-.theme-browser.content-filterable .theme .theme-id-container {
+.theme-browser .theme.focus .theme-screenshot img,
+.theme-browser .theme:hover .theme-screenshot img {
+    border-top-left-radius: calc(2px + var(--border-radius-small)) !important;
+    border-top-right-radius: var(--border-radius-small) !important;
+    display: none;
+}
+
+.theme-browser.content-filterable .theme .theme-id-container,
+.theme-browser .theme .theme-id-container {
     padding: var(--padding);
     height: auto;
     background: var(--shade-black);
     box-shadow: none;
 }
 
-.theme-browser.content-filterable .theme .theme-name {
+.theme-browser .theme .theme-id-container {
+    border-bottom-left-radius: var(--border-radius-small);
+    border-bottom-right-radius: var(--border-radius-small);
+}
+
+.theme-browser.content-filterable .theme .theme-name,
+.theme-browser .theme .theme-id-container .theme-name {
     background: transparent;
     border: none;
     box-shadow: none;
     outline: none;
+    color: black;
 }
 
 .filter-count .count.theme-count {
@@ -846,6 +863,13 @@ Theme Page
 .show-filters .wp-filter .drawer-toggle:focus:before,
 .show-filters .wp-filter .drawer-toggle:hover:before {
     color: white;
+}
+
+.theme .notice,
+.theme .notice.is-dismissible {
+    margin: var(--padding);
+    background: var(--color-light-green);
+    border-color: var(--color-green);
 }
 
 /* 
