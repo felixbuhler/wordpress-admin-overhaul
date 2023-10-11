@@ -32,7 +32,7 @@ function theme_colors_customizer($wp_customize)
     $wp_customize->add_section(
         'theme_color_section',
         array(
-            'title' => '1995 Settings',
+            'title' => '〔1995〕Settings',
             'description' => 'Change Settings',
             'priority' => '40'
         )

@@ -19,7 +19,6 @@
 
     /* Admin Bar */
     --bar-height: 50px;
-    --menu-width: 200px;
 }
 
 @font-face {
@@ -242,7 +241,6 @@ Admin Menu
 #adminmenuback,
 #adminmenuwrap {
     background: var(--color-black);
-    width: var(--menu-width);
 }
 
 /* Separator */
@@ -336,10 +334,6 @@ Admin Menu
     box-shadow: none;
 }
 
-#adminmenu .wp-submenu {
-    left: var(--menu-width);
-}
-
 #adminmenu .wp-not-current-submenu .wp-submenu,
 .folded #adminmenu .wp-has-current-submenu .wp-submenu {
     border-left: 0;
@@ -414,7 +408,9 @@ a:hover {
 .wrap .page-title-action:active,
 /* UI Buttons */
 .wp-core-ui .button,
-.wp-core-ui .button-secondary {
+.wp-core-ui .button-secondary,
+/* Component Buttons */
+.components-button.is-primary {
     color: white;
     background: var(--color-main);
     border-radius: 50px;
@@ -433,10 +429,12 @@ a:hover {
 .wrap .page-title-action:hover,
 /* UI Buttons */
 .wp-core-ui .button:hover,
-.wp-core-ui .button-secondary:hover {
+.wp-core-ui .button-secondary:hover,
+/* Component Buttons */
+.components-button.is-primary:hover {
     border: none;
     box-shadow: none;
-    background: var(--color-button-hover);
+    background: var(--color-button-hover) !important;
     color: white;
 }
 
@@ -1150,6 +1148,19 @@ body.login div#login form#loginform p.submit input#wp-submit:hover {
 /* 
 ============================================================
 
+Footer
+
+============================================================ 
+*/
+
+#wpfooter {
+    position: relative;
+    padding: calc(0.5 * var(--padding-50));
+}
+
+/* 
+============================================================
+
 WooCommerce
 
 ============================================================ 
@@ -1157,7 +1168,6 @@ WooCommerce
 
 .woocommerce-page #wpcontent {
     min-height: calc(100vh - var(--bar-height));
-    margin-left: var(--menu-width);
 }
 
 .woocommerce-embed-page #wpbody-content {
@@ -1166,7 +1176,6 @@ WooCommerce
 
 .woocommerce-layout__header {
     top: var(--bar-height) !important;
-    width: calc(100% - var(--menu-width)) !important;
 }
 
 .woocommerce-layout__header-wrapper h1 {
@@ -1180,18 +1189,4 @@ WooCommerce
     box-shadow: none !important;
     border-radius: 100px !important;
     border: none !important
-}
-
-/* 
-============================================================
-
-Footer
-
-============================================================ 
-*/
-
-#wpfooter {
-    margin-left: var(--menu-width);
-    position: relative;
-    padding: calc(0.5 * var(--padding-50));
 }
